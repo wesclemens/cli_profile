@@ -1,0 +1,54 @@
+#term xterm-256color
+#term screen-256color-bce
+
+# start with visual bell as default
+vbell on
+vbell_msg " *beep*"
+
+# UTF-8 everywhere
+defutf8 on
+
+# disable Ctrl-S/Ctrl-Q "flow control"
+defflow off
+
+# detach on hangup
+autodetach on
+
+# don't display the copyright page
+startup_message off
+
+# emulate .logout message
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+
+# Set the defualt shell to be used
+shell -bash
+#Force logon shell bacause of /sys/etc/profile
+#shell -ksh93
+
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+#attrcolor b ".I"
+
+# erase background with current bg color
+defbce "on"
+
+# If a screen dies, don't freeze the whole screen waiting for it.
+nonblock on
+
+# Change default scrollback value for new windows
+defscrollback 10000
+scrollback 10000
+
+# look and feel
+caption always "%{kw} %3n %t%? @%u%?%? [%h]%?%=%m/%d/%Y %C %A"
+
+hardstatus alwayslastline '%{+b 02}[%H][%=%{-b .7}%?%-LW%?%{+b .1} (%{.7}%n*%f%t%?(%u)%?%{.1})%{-b .7}%?%+Lw%?%?%=%{+b .2}][%{.7} %l %{.2}]'
+#Use this to test if load avrage is working
+#hardstatus alwayslastline "Host: %H Date: %D-%M-%Y: Load: %l "
+
+activity "Activity in %t (%n)"
+
+# These are in revers order so when starting a new screen session
+# screen will load with screen 0 selected reather then the last
+# screen.
+#screen -t bash 0

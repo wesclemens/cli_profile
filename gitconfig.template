@@ -1,0 +1,37 @@
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore_global
+  pager = less
+[user]
+  name = $name
+  email = $email
+[advice]
+  statusHints = false
+[branch]
+  autosetupmerge = true
+[color]
+  ui     = auto
+[alias]
+  st     = status
+  co     = checkout
+  br     = branch
+  rt     = remote
+  ru     = remote update
+  rs     = remote show
+  sb     = show-branch
+  sm     = submodule
+  smf    = submodule foreach
+  smu    = submodule update
+[format]
+  pretty = full
+[gc]
+  auto   = 1
+[rerere]
+  enabled = 1
+[merge]
+  tool   = vimdiff
+  stat = true
+[diff]
+  mnemonicprefix = true
+[log]
+  decorate = full

@@ -1,0 +1,21 @@
+set bell-style none
+
+# Home
+"\e[1~": beginning-of-line
+# End
+"\e[4~": end-of-line
+# Page Up 
+"\e[5~": history-search-backward 
+# Page Down
+"\e[6~": history-search-forward 
+# Insert
+"\e[2~": quoted-insert
+#Alt Delete
+"\M-\e[3~": kill-word
+#Arrow Keys
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+
+$if Bash
+	space: magic-space
+$endif
