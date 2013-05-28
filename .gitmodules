@@ -7,6 +7,6 @@
 [submodule "vim.dot/bundle/syntastic"]
 	path = vim.dot/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "vim-coffee-script"]
-	path = vim-coffee-script
+[submodule "vim.dot/bundle/vim-coffee-script"]
+	path = vim.dot/bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
