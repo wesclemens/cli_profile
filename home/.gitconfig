@@ -3,8 +3,8 @@
   excludesfile = ~/.gitignore_global
   pager = less
 [user]
-  name = $name
-  email = $email
+  name = William Clemens
+  email = wesclemens@gmail.com
 [advice]
   statusHints = false
 [branch]

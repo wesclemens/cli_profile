@@ -1,12 +1,12 @@
-[submodule "vim.dot/bundle/nerdtree"]
-	path = vim.dot/bundle/nerdtree
+[submodule "home/.vim/bundle/nerdtree"]
+	path = home/.vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim.dot/bundle/SearchComplete"]
-	path = vim.dot/bundle/SearchComplete
+[submodule "home/.vim/bundle/SearchComplete"]
+	path = home/.vim/bundle/SearchComplete
 	url = git://github.com/vim-scripts/SearchComplete.git
-[submodule "vim.dot/bundle/syntastic"]
-	path = vim.dot/bundle/syntastic
+[submodule "home/.vim/bundle/syntastic"]
+	path = home/.vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "vim.dot/bundle/vim-coffee-script"]
-	path = vim.dot/bundle/vim-coffee-script
+[submodule "home/.vim/bundle/vim-coffee-script"]
+	path = home/.vim/bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
