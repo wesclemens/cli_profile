@@ -93,3 +93,5 @@ if [[ -f ~/.pythonrc ]]; then
   export PYTHONSTARTUP=~/.pythonrc
 fi
 
+# alias for homeshick
+alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
