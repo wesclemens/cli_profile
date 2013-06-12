@@ -10,3 +10,8 @@ alias egrep='egrep --color=auto'
 alias less='less -R'
 alias du='du -h'
 alias screen='screen -U'
+
+# Bash autocomplete files installed with brew
+if  which brew &>/dev/null && [[ -f $(brew --prefix)/etc/bash_completion ]]; then
+  source $(brew --prefix)/etc/bash_completion
+fi

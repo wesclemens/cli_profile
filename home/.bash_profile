@@ -69,11 +69,6 @@ if [[ -f /etc/bash_completion ]] && ! shopt -oq posix; then
     source /etc/bash_completion
 fi
 
-# Bash autocomplete files installed with brew
-if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
-  source $(brew --prefix)/etc/bash_completion
-fi
-
 # Set up Git prompt
 if [[ -f /usr/local/git/contrib/completion/git-prompt.sh ]]; then
   source /usr/local/git/contrib/completion/git-prompt.sh
