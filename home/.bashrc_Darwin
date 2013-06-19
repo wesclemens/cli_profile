@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Put /usr/local/bin at the front of the path
+# This is for homebrew
+if [[ -d /usr/local/bin ]]; then
+  PATH=/usr/local/bin:$PATH
+fi

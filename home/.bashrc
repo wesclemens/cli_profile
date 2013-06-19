@@ -3,7 +3,7 @@
 # for examples
 
 if [[ -d $HOME/bin/ ]]; then
-  PATH=$HOME/bin/:$PATH
+  PATH=$HOME/bin:$PATH
 fi
 
 
@@ -32,3 +32,7 @@ if which rbenv &>/dev/null; then
   eval "$(rbenv init -)"
 fi
 
+# Load OS bashrc settings
+if [[ -f ~/.bashrc_$(uname) ]]; then
+  source ~/.bashrc_$(uname)
+fi
