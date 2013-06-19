@@ -74,12 +74,12 @@ function git-wrapper {
   case "$1" in
     root)
       if \git rev-parse --show-toplevel >/dev/null; then
-        cd $(\git rev-parse --show-toplevel )
+        cd "$(\git rev-parse --show-toplevel )"
       else
         return $?
       fi
       ;;
-    *) \git $@;;
+    *) \git "$@";;
   esac
 }
 alias git="git-wrapper"
