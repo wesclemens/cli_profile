@@ -72,7 +72,13 @@ fi
 # Create git wrapper for git-root
 function git-wrapper {
   case "$1" in
-    root) cd $(\git rev-parse --show-toplevel);;
+    root)
+      if \git rev-parse --show-toplevel >/dev/null; then
+        cd $(\git rev-parse --show-toplevel )
+      else
+        return $?
+      fi
+      ;;
     *) \git $@;;
   esac
 }
