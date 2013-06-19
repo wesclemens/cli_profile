@@ -83,6 +83,15 @@ if [[ -f /usr/local/git/contrib/completion/git-completion.bash ]]; then
   source /usr/local/git/contrib/completion/git-completion.bash
 fi
 
+# Create git wrapper for git-root
+function git-wrapper {
+  case "$1" in
+    root) cd $(\git rev-parse --show-toplevel);;
+    *) \git $@;;
+  esac
+}
+alias git="git-wrapper"
+
 # Python Conf
 if [[ -f ~/.pythonrc ]]; then
   export PYTHONSTARTUP=~/.pythonrc
