@@ -15,12 +15,11 @@
   st     = status
   co     = checkout
   br     = branch
+  rb     = rebase
   rt     = remote
   ru     = remote update
   rs     = remote show
-  sb     = show-branch
   sm     = submodule
-  smf    = submodule foreach
   smu    = submodule update
 [format]
   pretty = full
