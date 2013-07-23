@@ -27,3 +27,6 @@ if [[ -d /Applications/Android\ Studio.app/sdk/platform-tools ]]; then
   PATH=$PATH:/Applications/Android\ Studio.app/sdk/platform-tools
 fi
 
+if [[ -d /Applications/Android\ Studio.app/sdk/tools ]]; then
+  PATH=$PATH:/Applications/Android\ Studio.app/sdk/tools
+fi

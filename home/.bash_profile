@@ -5,6 +5,9 @@ fi
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Set readline mode to vi
+set -o vi
+
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
 HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
@@ -41,7 +44,7 @@ esac
 utf8_prompt=yes;
 
 if [[ "$color_prompt" = yes ]]; then
-  PROMPT_COMMAND='_RETURN_CODE=$?;'
+  PROMPT_COMMAND="_RETURN_CODE=\$?; $PROMPT_COMMAND"
   if [[ "$utf8_prompt" = yes ]]; then
     PS1='\[\e[0;35m\]┌─\[\e[0;36m\][\!] \[\e[0;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w$(__git_ps1 " \[\e[1;31m\](%s)")\[\e[m\]\[\e[1;32m\]\n\[\e[0;35m\]└─$([[ $_RETURN_CODE -ne 0 ]] && echo -ne "\[\e[0;31m\]($_RETURN_CODE)")\[\e[0m\] $ ';
     PS2="$(tput sc && tput cuu1 && echo -n "\[\e[0;35m\]│ \[\e[m\]"; tput rc;)\[\e[0;35m\]└─\[\e[m\] "
@@ -57,9 +60,14 @@ if [[ -f ~/.bash_profile_$(uname) ]]; then
   source ~/.bash_profile_$(uname)
 fi
 
+# Load local bash profile
+if [[ -f ~/.bash_profile_local ]]; then
+  source ~/.bash_profile_local
+fi
+
 # If pip is installed load pip completion
 if which pip &>/dev/null; then
-	eval "`pip completion --bash`"
+  eval "`pip completion --bash`"
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -90,4 +98,8 @@ if [[ -f ~/.pythonrc ]]; then
 fi
 
 # alias for homeshick
-alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
+if [[ -f $HOME/.homesick/repos/homeshick/home/.homeshick ]]; then
+  alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
+else
+  echo "Homeshick is not installed something is wrong?!?!"
+fi

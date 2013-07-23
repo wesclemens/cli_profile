@@ -10,3 +10,8 @@ fi
 if [[ -f ~/.bashrc_$(uname) ]]; then
   source ~/.bashrc_$(uname)
 fi
+
+# Load local bashrc if exists
+if [[ -f ~/.bashrc_local ]]; then
+  source ~/.bashrc_local
+fi
