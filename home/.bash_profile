@@ -1,5 +1,5 @@
 if [ -f ~/.bashrc ]; then
-	source ~/.bashrc
+  source ~/.bashrc
 fi
 
 # If not running interactively, don't do anything

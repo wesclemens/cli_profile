@@ -17,5 +17,5 @@ set bell-style none
 "\e\e[D": backward-word
 
 $if Bash
-	space: magic-space
+  space: magic-space
 $endif

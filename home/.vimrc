@@ -2,21 +2,21 @@
 " * Terminal Settings
 " ****
 "if &term =~ 'xterm-256color' || &term =~ 'screen-256color'
-"	set t_Co=256
-"	set t_Sf=[3%p1%dm
-"	set t_Sb=[4%p1%dm
+"  set t_Co=256
+"  set t_Sf=[3%p1%dm
+"  set t_Sb=[4%p1%dm
 "else
-"	set t_Co=16
-"	set t_Sf=[3%p1%dm
-"	set t_Sb=[4%p1%dm
-"	set t_kb=^V<BS>  "this fixs the backspace key
-"	fixdel
+"  set t_Co=16
+"  set t_Sf=[3%p1%dm
+"  set t_Sb=[4%p1%dm
+"  set t_kb=^V<BS>  "this fixs the backspace key
+"  fixdel
 "endif
 "
 "if &term =~ 'screen' || &term =~ 'screen-256color'
-"	exe "set title titlestring=vim:%t"
-"	exe "set title t_ts=\<ESC>k t_fs=\<ESC>\\"
-"	exe "set ttymouse=xterm2"
+"  exe "set title titlestring=vim:%t"
+"  exe "set title t_ts=\<ESC>k t_fs=\<ESC>\\"
+"  exe "set ttymouse=xterm2"
 "endif
 
 " Vim does not hijack terminal background color
@@ -34,13 +34,13 @@ nnoremap <space> za
 
 " Enable syntax highlighting if we have color support
 if has('syntax') && (&t_Co > 2)
-	syntax enable
+  syntax enable
 
-	" Highlight whitespace errors
-	au Syntax * syn match Error /\s\+$/ | syn match Error /^\s\+$/
+  " Highlight whitespace errors
+  au Syntax * syn match Error /\s\+$/ | syn match Error /^\s\+$/
 
-	" Code foldin
-	set foldmethod=syntax
+  " Code foldin
+  set foldmethod=syntax
 
 endif
 
@@ -90,7 +90,7 @@ set mouse=nv "Normal w/ Visual
 " Turn on line numbers
 set number
 if (version >= 700)
-	set numberwidth=5
+  set numberwidth=5
 endif
 
 " backpace
@@ -119,7 +119,7 @@ autocmd BufReadPost *
 
 " Omni complete
 if (version >= 700)
-	set omnifunc=syntaxcomplete#Complete
+  set omnifunc=syntaxcomplete#Complete
 endif
 
 " ****
@@ -184,7 +184,7 @@ set diffopt+=iwhite
 
 " disable syntax highlighting
 if &diff
-	syntax off
+  syntax off
 endif
 
 " ****
@@ -251,9 +251,9 @@ execute pathogen#infect()
 " * NERDTree
 
 if has("gui_macvim")
-	map <D-j> :NERDTreeToggle<cr>
+  map <D-j> :NERDTreeToggle<cr>
 else
-	map <F3> :NERDTreeToggle<cr>
+  map <F3> :NERDTreeToggle<cr>
 endif
 
 " * syntastic
