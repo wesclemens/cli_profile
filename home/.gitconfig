@@ -22,7 +22,7 @@
   sm     = submodule
   smu    = submodule update
 [format]
-  pretty = full
+  pretty = fuller
 [gc]
   auto   = 1
 [rerere]
