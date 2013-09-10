@@ -194,11 +194,13 @@ endif
 " run #!
 function! CheckForShebang()
    if (match( getline(1) , '^\#!') == 0)
-       !./%
-   elseif (match( getline(1) , '^<?php') == 0)
-       !php ./%
+     !./%
+   elseif (&ft == 'php')
+     !php ./%
+   elseif (&ft == 'javascript')
+     !node ./%
    else
-       echo "Could not excute script."
+     echo "Could not excute script."
    end
 
 endfunction
