@@ -21,12 +21,3 @@ fi
 if [[ -d /usr/local/share/npm/bin ]]; then
   PATH=$PATH:/usr/local/share/npm/bin
 fi
-
-# Android Dev
-if [[ -d /Applications/Android\ Studio.app/sdk/platform-tools ]]; then
-  PATH=$PATH:/Applications/Android\ Studio.app/sdk/platform-tools
-fi
-
-if [[ -d /Applications/Android\ Studio.app/sdk/tools ]]; then
-  PATH=$PATH:/Applications/Android\ Studio.app/sdk/tools
-fi
