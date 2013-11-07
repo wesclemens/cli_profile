@@ -35,6 +35,7 @@ nnoremap <space> za
 " Enable syntax highlighting if we have color support
 if has('syntax') && (&t_Co > 2)
   syntax enable
+  colorscheme macvim
 
   " Highlight whitespace errors
   au Syntax * syn match Error /\s\+$/ | syn match Error /^\s\+$/
@@ -46,10 +47,18 @@ endif
 
 " highlight right edge of page
 set colorcolumn=80
-"highlight ColorColumn guibg=#F1F5FA guifg=black ctermbg=lightgrey ctermfg=black
+highlight ColorColumn cterm=NONE guibg=#F1F5FA ctermbg=lightgrey
 
-" highlihgt current line
-set cursorline
+" highlight current line
+highlight CursorLine cterm=NONE ctermbg=195 guibg=#CCFFFF
+" hi foo cterm=kj
+" only highlight if in current buffer
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
+
 
 " Keep 50 lines of command line history
 set history=50
@@ -238,6 +247,9 @@ function! ToggleList()
         set list!
     endif
 endfunction
+if has("gui_macvim")
+  map <D-l> :call ToggleList()<CR>
+endif
 map <F10> :call ToggleList()<CR>
 silent call ToggleList() " Turn it on
 
@@ -251,12 +263,12 @@ au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | execute "s
 execute pathogen#infect()
 
 " * NERDTree
-
+let NERDTreeShowBookmarks=1
+let NERDTreeDirArrows=1
 if has("gui_macvim")
-  map <D-j> :NERDTreeToggle<cr>
-else
-  map <F3> :NERDTreeToggle<cr>
+  map <D-j> :NERDTreeToggle \| :silent NERDTreeMirror<cr>
 endif
+map <F3> :NERDTreeToggle \| :silent NERDTreeMirror<cr>
 
 " * syntastic
 let g:syntastic_check_on_open=1
