@@ -160,7 +160,7 @@ set incsearch
 filetype plugin on
 
 " hit this button before pasting code so text is inserted literally
-set pastetoggle=<F9>
+set pastetoggle=<C-i>
 
 " highlight search matches
 set hlsearch
@@ -268,7 +268,7 @@ let NERDTreeDirArrows=1
 if has("gui_macvim")
   map <D-j> :NERDTreeToggle \| :silent NERDTreeMirror<cr>
 endif
-map <F3> :NERDTreeToggle \| :silent NERDTreeMirror<cr>
+map <C-j> :NERDTreeToggle \| :silent NERDTreeMirror<cr>
 
 " * syntastic
 let g:syntastic_check_on_open=1
