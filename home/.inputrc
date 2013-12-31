@@ -1,5 +1,7 @@
 set bell-style none
 
+set editing-mode vi
+
 # Home
 "\e[1~": beginning-of-line
 # End

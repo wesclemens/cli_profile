@@ -46,7 +46,8 @@ if has('syntax') && (&t_Co > 2)
 endif
 
 " highlight right edge of page
-set colorcolumn=80
+set textwidth=80
+set colorcolumn=+1
 highlight ColorColumn cterm=NONE guibg=#F1F5FA ctermbg=lightgrey
 
 " highlight current line
@@ -86,7 +87,7 @@ set wildmode=list:longest,full
 set shortmess=
 
 " show matching set of parentheses as they are typed:
-set showmatch 
+set showmatch
 
 " have the mouse enabled:
 "set mouse=a "All Times
@@ -135,7 +136,8 @@ endif
 " * Text Formatting - General
 " ****
 set shiftwidth=2
-set tabstop=2
+set softtabstop=-1 " -1 to copy the value of shiftwidth
+set tabstop=8
 
 " replace tabs with spaces
 set expandtab
@@ -217,15 +219,17 @@ map <F5> :call CheckForShebang()<CR>
 
 " List Toggle command (show non-printable chars)
 let g:toggle_list = 1
+let b:original_colorcolumn = &colorcolumn
 function! ToggleList()
     if exists("g:toggle_list")
         if !exists("b:toggle_list_state")
             let b:toggle_list_state = &list ? 1 : 0
         endif
-        let b:toggle_list_state = (b:toggle_list_state + 1) % 3
+        let b:toggle_list_state = (b:toggle_list_state + 1) % 4
         if b:toggle_list_state == 0
             set nolist
-            echo "nolist"
+            execute 'set colorcolumn='.b:original_colorcolumn
+            echo 'nolist'
         elseif b:toggle_list_state == 1
             set list
             if (version >= 700)
@@ -233,7 +237,8 @@ function! ToggleList()
             else
                 set listchars=tab:»\ ,trail:·
             endif
-            echo "list"
+            execute 'set colorcolumn='.b:original_colorcolumn
+            echo 'list'
         elseif b:toggle_list_state == 2
             set list
             if (version >= 700)
@@ -241,7 +246,23 @@ function! ToggleList()
             else
                 set listchars=tab:»\ ,trail:·,eol:¶
             endif
-            echo "more list"
+            execute 'set colorcolumn='.b:original_colorcolumn
+            echo 'more list'
+        elseif b:toggle_list_state == 3
+            set list
+            if (version >= 700)
+                set listchars=tab:»\ ,trail:·,eol:¶,nbsp:·
+            else
+                set listchars=tab:»\ ,trail:·,eol:¶
+            endif
+            let tabstops = []
+            let index = &softtabstop
+            while index <= &textwidth
+              let tabstops = add(tabstops, index)
+              let index = index + &softtabstop
+            endwhile
+            execute 'set colorcolumn='.join(tabstops, ',')
+            echo 'most list'
         endif
     else
         set list!
