@@ -11,12 +11,6 @@ if [[ -d /usr/local/opt/ruby/bin ]]; then
   PATH=/usr/local/opt/ruby/bin:$PATH
 fi
 
-# Python path from homebrew
-if [[ -d /usr/local/lib/python2.7/site-packages ]]; then
-  # Don't know if this is proper. Should I do this?
-  export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-fi
-
 #Global npm apps from homebrew
 if [[ -d /usr/local/share/npm/bin ]]; then
   PATH=$PATH:/usr/local/share/npm/bin
