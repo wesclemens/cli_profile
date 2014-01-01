@@ -91,7 +91,8 @@ set showmatch
 
 " have the mouse enabled:
 "set mouse=a "All Times
-set mouse=nv "Normal w/ Visual
+"set mouse=nv "Normal w/ Visual
+"set mouse=cv "Command & Visual
 "set mouse=n "Normal (command only)
 
 " don't have files trying to override this .vimrc:
