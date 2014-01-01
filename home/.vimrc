@@ -163,7 +163,7 @@ set incsearch
 filetype plugin on
 
 " hit this button before pasting code so text is inserted literally
-set pastetoggle=<C-i>
+set pastetoggle=<F9>
 
 " highlight search matches
 set hlsearch
