@@ -13,3 +13,6 @@
 [submodule "home/.vim/bundle/supertab"]
 	path = home/.vim/bundle/supertab
 	url = https://github.com/ervandew/supertab
+[submodule "home/.vim/bundle/vim-list-char-toggle"]
+	path = home/.vim/bundle/vim-list-char-toggle
+	url = git@github.com:wesclemens/vim-list-char-toggle.git

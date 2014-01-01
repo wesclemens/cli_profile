@@ -217,62 +217,6 @@ function! CheckForShebang()
 endfunction
 map <F5> :call CheckForShebang()<CR>
 
-" List Toggle command (show non-printable chars)
-let g:toggle_list = 1
-let b:original_colorcolumn = &colorcolumn
-function! ToggleList()
-    if exists("g:toggle_list")
-        if !exists("b:toggle_list_state")
-            let b:toggle_list_state = &list ? 1 : 0
-        endif
-        let b:toggle_list_state = (b:toggle_list_state + 1) % 4
-        if b:toggle_list_state == 0
-            set nolist
-            execute 'set colorcolumn='.b:original_colorcolumn
-            echo 'nolist'
-        elseif b:toggle_list_state == 1
-            set list
-            if (version >= 700)
-                set listchars=tab:»\ ,trail:·,nbsp:·
-            else
-                set listchars=tab:»\ ,trail:·
-            endif
-            execute 'set colorcolumn='.b:original_colorcolumn
-            echo 'list'
-        elseif b:toggle_list_state == 2
-            set list
-            if (version >= 700)
-                set listchars=tab:»\ ,trail:·,eol:¶,nbsp:·
-            else
-                set listchars=tab:»\ ,trail:·,eol:¶
-            endif
-            execute 'set colorcolumn='.b:original_colorcolumn
-            echo 'more list'
-        elseif b:toggle_list_state == 3
-            set list
-            if (version >= 700)
-                set listchars=tab:»\ ,trail:·,eol:¶,nbsp:·
-            else
-                set listchars=tab:»\ ,trail:·,eol:¶
-            endif
-            let tabstops = []
-            let index = &softtabstop
-            while index <= &textwidth
-              let tabstops = add(tabstops, index)
-              let index = index + &softtabstop
-            endwhile
-            execute 'set colorcolumn='.join(tabstops, ',')
-            echo 'most list'
-        endif
-    else
-        set list!
-    endif
-endfunction
-if has("gui_macvim")
-  map <D-l> :call ToggleList()<CR>
-endif
-map <F10> :call ToggleList()<CR>
-silent call ToggleList() " Turn it on
 
 " Set permissions correctly on file that contain Shebang
 au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | execute "silent !chmod u+x <afile>" | endif | endif
@@ -304,6 +248,10 @@ let g:syntastic_loc_list_height=5
 " * Powerline
 " load powerline
 set runtimepath+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+
+" * vim-list-char-toggle
+" List Toggle command (show non-printable chars)
+map <F10> :call ToggleList()<CR>
 
 " powerline settings
 set noshowmode
