@@ -233,10 +233,7 @@ execute pathogen#infect()
 " * NERDTree
 let NERDTreeShowBookmarks=1
 let NERDTreeDirArrows=1
-if has("gui_macvim")
-  map <D-j> :NERDTreeToggle \| :silent NERDTreeMirror<cr>
-endif
-map <C-j> :NERDTreeToggle \| :silent NERDTreeMirror<cr>
+map <F2> :NERDTreeToggle \| :silent NERDTreeMirror<cr>
 
 " * syntastic
 let g:syntastic_check_on_open=1
