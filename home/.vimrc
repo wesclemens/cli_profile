@@ -211,6 +211,8 @@ function! CheckForShebang()
      !php ./%
    elseif (&ft == 'javascript')
      !node ./%
+   elseif (&ft == 'python')
+     !python ./%
    else
      echo "Could not excute script."
    end
