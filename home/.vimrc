@@ -137,7 +137,11 @@ endif
 " * Text Formatting - General
 " ****
 set shiftwidth=2
-set softtabstop=-1 " -1 to copy the value of shiftwidth
+if (version >= 704)
+  set softtabstop=-1 " -1 to copy the value of shiftwidth
+else
+  set softtabstop=2
+endif
 set tabstop=8
 
 " replace tabs with spaces
