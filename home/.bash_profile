@@ -80,7 +80,11 @@ function __fancy_prompt {
   local user=${c_green}\\u
   local host=\\h
   local cwd=${c_lightgreen}\\w
-  local vc_branch=" $(__git_ps1 "${c_lightred}(%s)")"
+  if [[ "$(type -t  __git_ps1)" == "function" ]]; then
+    local vc_branch=" $(__git_ps1 "${c_lightred}(%s)")"
+  else
+    local vs_branch=""
+  fi
   local cmd_mark="${c_clear} \\$ "
 
   if [[ -n "$VIRTUAL_ENV" ]]; then
