@@ -8,9 +8,6 @@ fi
 # Set readline mode to vi
 set -o vi
 
-# Set audocd
-[ ${BASH_VERSINFO[0]} -ge 4 ] && shopt -s autocd
-
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
 HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
