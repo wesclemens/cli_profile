@@ -235,9 +235,11 @@ au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | execute "s
 execute pathogen#infect()
 
 " * NERDTree
+let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeShowBookmarks=1
 let NERDTreeDirArrows=1
 map <F2> :NERDTreeToggle \| :silent NERDTreeMirror<cr>
+
 
 " * syntastic
 let g:syntastic_check_on_open=1
