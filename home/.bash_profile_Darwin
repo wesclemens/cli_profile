@@ -11,7 +11,31 @@ alias less='less -R'
 alias du='du -h'
 alias screen='screen -U'
 
+# Enable Fink
+if [[ -r /sw/bin/init.sh ]]; then
+  source /sw/bin/init.sh
+fi
+
+# Enable Mac Ports
+if [[ -d /opt/local/sbin ]]; then
+  PATH=/opt/local/sbin:$PATH
+fi
+
+if [[ -d /opt/local/bin ]]; then
+  PATH=/opt/local/bin:$PATH
+fi
+
 # Bash autocomplete files installed with brew
 if  which brew &>/dev/null && [[ -f $(brew --prefix)/etc/bash_completion ]]; then
   source $(brew --prefix)/etc/bash_completion
+fi
+
+# Bash autocomplete files installed with port
+if [[ -f /opt/local/etc/bash_completion ]]; then
+  source /opt/local/etc/bash_completion
+fi
+
+# Bash git prompt from port
+if [[ -f /opt/local/share/git-core/git-prompt.sh ]]; then
+  source /opt/local/share/git-core/git-prompt.sh
 fi
