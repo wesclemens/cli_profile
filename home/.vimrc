@@ -234,6 +234,18 @@ au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | execute "s
 " * Load pathogen plugins
 execute pathogen#infect()
 
+" * git gutter
+let g:gitgutter_diff_args = '-w'
+hi GitGutterAdd  ctermfg=green ctermbg=grey
+hi GitGutterChange ctermfg=yellow ctermbg=grey
+hi GitGutterDelete ctermfg=red ctermbg=grey
+hi GitGutterChangeDelete ctermfg=blue ctermbg=grey
+
+let g:gitgutter_sign_added = '+ '
+let g:gitgutter_sign_modified = '~ '
+let g:gitgutter_sign_removed = '- '
+let g:gitgutter_sign_modified_removed = '~+'
+
 " * NERDTree
 let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeShowBookmarks=1
