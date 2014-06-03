@@ -48,11 +48,14 @@ endif
 " highlight right edge of page
 set textwidth=80
 set colorcolumn=+1
-highlight ColorColumn cterm=NONE guibg=#F1F5FA ctermbg=lightgrey
 
 " highlight current line
-highlight CursorLine cterm=NONE ctermbg=195 guibg=#CCFFFF
-" hi foo cterm=kj
+if &background == 'dark'
+  highlight CursorLine term=bold cterm=bold guibg=Grey20 ctermbg=DarkGrey
+else
+  highlight CursorLine term=bold cterm=bold guibg=Grey20 ctermbg=LightGrey
+endif
+
 " only highlight if in current buffer
 augroup CursorLine
   au!
@@ -91,7 +94,7 @@ set showmatch
 
 " have the mouse enabled:
 "set mouse=a "All Times
-"set mouse=nv "Normal w/ Visual
+set mouse=nv "Normal w/ Visual
 "set mouse=cv "Command & Visual
 "set mouse=n "Normal (command only)
 
