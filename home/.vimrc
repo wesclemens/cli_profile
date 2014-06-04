@@ -32,29 +32,9 @@ set nocompatible
 " Space toggels folds
 nnoremap <space> za
 
-" Enable syntax highlighting if we have color support
-if has('syntax') && (&t_Co > 2)
-  syntax enable
-  colorscheme macvim
-
-  " Highlight whitespace errors
-  au Syntax * syn match Error /\s\+$/ | syn match Error /^\s\+$/
-
-  " Code foldin
-  set foldmethod=syntax
-
-endif
-
 " highlight right edge of page
 set textwidth=80
 set colorcolumn=+1
-
-" highlight current line
-if &background == 'dark'
-  highlight CursorLine term=bold cterm=bold guibg=Grey20 ctermbg=DarkGrey
-else
-  highlight CursorLine term=bold cterm=bold guibg=Grey20 ctermbg=LightGrey
-endif
 
 " only highlight if in current buffer
 augroup CursorLine
@@ -195,18 +175,6 @@ set guioptions-=T
 set guioptions-=r
 
 " ****
-" * vimdiff
-" ****
-
-" Ignore whitespace in diff
-set diffopt+=iwhite
-
-" disable syntax highlighting
-if &diff
-  syntax off
-endif
-
-" ****
 " * Add custom function
 " ****
 
@@ -237,12 +205,34 @@ au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | execute "s
 " * Load pathogen plugins
 execute pathogen#infect()
 
+" * solarized
+" Enable syntax highlighting if we have color support
+if has('syntax') && (&t_Co > 2)
+  syntax enable
+  let g:solarized_termcolors=256
+  colorscheme solarized
+
+  " Highlight whitespace errors
+  au Syntax * syn match Error /\s\+$/ | syn match Error /^\s\+$/
+
+  " Code foldin
+  set foldmethod=syntax
+
+endif
+
 " * git gutter
 let g:gitgutter_diff_args = '-w'
-hi GitGutterAdd  ctermfg=green ctermbg=grey
-hi GitGutterChange ctermfg=yellow ctermbg=grey
-hi GitGutterDelete ctermfg=red ctermbg=grey
-hi GitGutterChangeDelete ctermfg=blue ctermbg=grey
+if &background == 'dark'
+  hi GitGutterAdd  ctermfg=lightgreen ctermbg=DarkGrey
+  hi GitGutterChange ctermfg=166 ctermbg=DarkGrey
+  hi GitGutterDelete ctermfg=124 ctermbg=DarkGrey
+  hi GitGutterChangeDelete ctermfg=4 ctermbg=DarkGrey
+else
+  hi GitGutterAdd  ctermfg=lightgreen ctermbg=Grey
+  hi GitGutterChange ctermfg=166 ctermbg=Grey
+  hi GitGutterDelete ctermfg=124 ctermbg=Grey
+  hi GitGutterChangeDelete ctermfg=4 ctermbg=Grey
+endif
 
 let g:gitgutter_sign_added = '+ '
 let g:gitgutter_sign_modified = '~ '
@@ -294,5 +284,17 @@ if ! has('gui_running')
         au InsertEnter * set timeoutlen=0
         au InsertLeave * set timeoutlen=1000
     augroup END
+endif
+
+" ****
+" * vimdiff
+" ****
+
+" Ignore whitespace in diff
+set diffopt+=iwhite
+
+" disable syntax highlighting
+if &diff
+  syntax off
 endif
 
