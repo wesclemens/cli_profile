@@ -245,6 +245,9 @@ let NERDTreeShowBookmarks=1
 let NERDTreeDirArrows=1
 map <F2> :NERDTreeToggle \| :silent NERDTreeMirror<cr>
 
+" * IndentLine
+let g:indentLine_char = "¦"
+let g:indentLine_color_term = 240
 
 " * syntastic
 let g:syntastic_check_on_open=1
