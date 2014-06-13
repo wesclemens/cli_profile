@@ -266,7 +266,16 @@ let g:syntastic_warning_symbol = '⚠'
 
 " * Powerline
 " load powerline
-set runtimepath+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+if has('python')
+  python << endpython
+try:
+  from powerline.vim import setup as powerline_setup
+  powerline_setup()
+  del powerline_setup
+except ImportError:
+  pass
+endpython
+endif
 
 " * vim-list-char-toggle
 " List Toggle command (show non-printable chars)
