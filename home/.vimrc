@@ -246,7 +246,7 @@ let NERDTreeDirArrows=1
 map <F2> :NERDTreeToggle \| :silent NERDTreeMirror<cr>
 
 " * IndentLine
-let g:indentLine_char = "¦"
+let g:indentLine_char = "│"
 let g:indentLine_color_term = 240
 
 " * syntastic
@@ -290,12 +290,12 @@ endif
 
 " Fix exscape lag
 if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
 endif
 
 " ****
