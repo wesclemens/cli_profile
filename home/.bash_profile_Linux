@@ -18,10 +18,6 @@ alias screen='screen -U'
 # Set up Git prompt
 if [[ -f /usr/local/git/contrib/completion/git-prompt.sh ]]; then
   source /usr/local/git/contrib/completion/git-prompt.sh
-else
-  function __git_ps1() {
-    :
-  }
 fi
 
 # Set up Git completion

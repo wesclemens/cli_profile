@@ -97,26 +97,16 @@ function __fancy_prompt {
 }
 PROMPT_COMMAND="__fancy_prompt; $PROMPT_COMMAND"
 
-# Load OS bash profile settings
-if [[ -f ~/.bash_profile_$(uname) ]]; then
-  source ~/.bash_profile_$(uname)
-fi
-
-# Load local bash profile
-if [[ -f ~/.bash_profile_local ]]; then
-  source ~/.bash_profile_local
-fi
-
-# If pip is installed load pip completion
-if which pip &>/dev/null; then
-  eval "`pip completion --bash`"
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [[ -f /etc/bash_completion ]] && ! shopt -oq posix; then
     source /etc/bash_completion
+fi
+
+# If pip is installed load pip completion
+if which pip &>/dev/null; then
+  eval "`pip completion --bash`"
 fi
 
 # Create git wrapper for git-root
@@ -144,4 +134,14 @@ if [[ -f $HOME/.homesick/repos/homeshick/home/.homeshick ]]; then
   source $HOME/.homesick/repos/homeshick/homeshick.sh
 else
   echo "Homeshick is not installed something is wrong?!?!"
+fi
+
+# Load OS bash profile settings
+if [[ -f ~/.bash_profile_$(uname) ]]; then
+  source ~/.bash_profile_$(uname)
+fi
+
+# Load local bash profile
+if [[ -f ~/.bash_profile_local ]]; then
+  source ~/.bash_profile_local
 fi
