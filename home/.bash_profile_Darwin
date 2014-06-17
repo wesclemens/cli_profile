@@ -20,6 +20,11 @@ if [[ -d /opt/local/bin ]]; then
   PATH=/opt/local/bin:$PATH
 fi
 
+# Add Android SDK CLI tools to path
+if [[ -d /opt/local/share/java/android-sdk-macosx ]]; then
+  PATH=$PATH:/opt/local/share/java/android-sdk-macosx/tools:/opt/local/share/java/android-sdk-macosx/platform-tools
+fi
+
 # Bash autocomplete files installed with port
 if [[ -f /opt/local/etc/bash_completion ]]; then
   source /opt/local/etc/bash_completion
