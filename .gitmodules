@@ -28,3 +28,6 @@
 [submodule "powerline-fonts"]
 	path = powerline-fonts
 	url = https://github.com/Lokaltog/powerline-fonts.git
+[submodule "home/.vim/bundle/vim-openscad"]
+	path = home/.vim/bundle/vim-openscad
+	url = https://github.com/torrancew/vim-openscad
