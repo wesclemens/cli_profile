@@ -7,3 +7,4 @@ if (version < 704)
   set softtabstop=4
 endif
 set autoindent
+set colorcolumn=+1,73
