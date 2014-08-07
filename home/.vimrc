@@ -226,30 +226,23 @@ if has('syntax') && (&t_Co > 2)
 
 endif
 
-" * git gutter
-let g:gitgutter_diff_args = '-w'
-if &background == 'dark'
-  hi GitGutterAdd  ctermfg=lightgreen ctermbg=DarkGrey
-  hi GitGutterChange ctermfg=166 ctermbg=DarkGrey
-  hi GitGutterDelete ctermfg=124 ctermbg=DarkGrey
-  hi GitGutterChangeDelete ctermfg=4 ctermbg=DarkGrey
-else
-  hi GitGutterAdd  ctermfg=lightgreen ctermbg=Grey
-  hi GitGutterChange ctermfg=166 ctermbg=Grey
-  hi GitGutterDelete ctermfg=124 ctermbg=Grey
-  hi GitGutterChangeDelete ctermfg=4 ctermbg=Grey
-endif
-
-let g:gitgutter_sign_added = '+ '
-let g:gitgutter_sign_modified = '~ '
-let g:gitgutter_sign_removed = '- '
-let g:gitgutter_sign_modified_removed = '~+'
-
 " * NERDTree
 let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeShowBookmarks=1
 let NERDTreeDirArrows=1
 map <F2> :NERDTreeToggle \| :silent NERDTreeMirror<cr>
+
+" * signify
+
+if &background == 'dark'
+  highlight DiffAdd cterm=bold ctermbg=DarkGrey ctermfg=119
+  highlight DiffDelete cterm=bold ctermbg=DarkGrey ctermfg=167
+  highlight DiffChange cterm=bold ctermbg=DarkGrey ctermfg=227
+else
+  highlight DiffAdd cterm=bold ctermbg=Grey ctermfg=119
+  highlight DiffDelete cterm=bold ctermbg=Grey ctermfg=167
+  highlight DiffChange cterm=bold ctermbg=Grey ctermfg=227
+endif
 
 " * IndentLine
 let g:indentLine_char = "│"

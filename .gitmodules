@@ -16,9 +16,6 @@
 [submodule "home/.vim/bundle/vim-list-char-toggle"]
 	path = home/.vim/bundle/vim-list-char-toggle
 	url = git@github.com:wesclemens/vim-list-char-toggle.git
-[submodule "home/.vim/bundle/vim-gitgutter"]
-	path = home/.vim/bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter
 [submodule "home/.vim/bundle/vim-colors-solarized"]
 	path = home/.vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
@@ -31,3 +28,6 @@
 [submodule "home/.vim/bundle/vim-openscad"]
 	path = home/.vim/bundle/vim-openscad
 	url = https://github.com/torrancew/vim-openscad
+[submodule "home/.vim/bundle/vim-signify"]
+	path = home/.vim/bundle/vim-signify
+	url = https://github.com/mhinz/vim-signify.git
