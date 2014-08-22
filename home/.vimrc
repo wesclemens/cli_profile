@@ -199,6 +199,8 @@ function! CheckForShebang()
 endfunction
 map <F5> :call CheckForShebang()<CR>
 
+" sudo write
+command Sudow w !sudo tee % > /dev/null
 
 " Set permissions correctly on file that contain Shebang
 au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | execute "silent !chmod u+x <afile>" | endif | endif
