@@ -1,2 +1,3 @@
 [ui]
 username = William Clemens <wesclemens@gmail.com>
+ignore = ~/.hgignore_global
