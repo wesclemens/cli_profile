@@ -77,8 +77,10 @@ function __fancy_prompt {
   local user=${c_green}\\u
   local host=\\h
   local cwd=${c_lightgreen}\\w
-  if [[ "$(type -t  __git_ps1)" == "function" ]]; then
+  if [[ "$(type -t  __git_ps1)" == "function" && -n "$(__git_ps1)" ]]; then
     local vc_branch=" $(__git_ps1 "${c_lightred}(%s)")"
+  elif [[ -n "$(hg branch 2>/dev/null)" ]]; then
+    local vc_branch=" ${c_lightred}($(hg branch 2>/dev/null))"
   else
     local vs_branch=""
   fi
