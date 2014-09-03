@@ -161,6 +161,9 @@ set listchars=tab:»\ ,trail:·,eol:¶,nbsp:·
 " show non-printable chars by default
 "set list
 
+" Disable <F1> as help button
+nmap <F1> <nop>
+
 " ****
 " * Graphical VIM settings
 " ****
