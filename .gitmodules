@@ -34,3 +34,6 @@
 [submodule "home/.vim/bundle/tagbar"]
 	path = home/.vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "home/.vim/bundle/tagbar-phpctags"]
+	path = home/.vim/bundle/tagbar-phpctags
+	url = https://github.com/vim-php/tagbar-phpctags.vim.git
