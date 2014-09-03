@@ -31,3 +31,6 @@
 [submodule "home/.vim/bundle/vim-signify"]
 	path = home/.vim/bundle/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
+[submodule "home/.vim/bundle/tagbar"]
+	path = home/.vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git

@@ -302,6 +302,9 @@ if ! has('gui_running')
   augroup END
 endif
 
+" tagbar
+nmap <F3> :TagbarToggle<CR>
+
 " ****
 " * vimdiff
 " ****
