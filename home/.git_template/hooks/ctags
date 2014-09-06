@@ -1,0 +1,22 @@
+#!/bin/sh
+set -x
+PATH="/usr/local/bin:$PATH"
+dir="`git rev-parse --git-dir`"
+trap 'rm -f "$dir/$$.tags" "$dir/$$.php.tags"' EXIT
+
+if which phpctags >/dev/null; then
+  git ls-files | \
+    grep ".php$" | \
+    xargs -n 1 -I% sh -c "phpctags -f - \"%\" || : " | \
+    grep --invert-match "^\!_TAG" > $dir/$$.php.tags
+
+  git ls-files | \
+    grep --invert-match ".php$" | \
+    ctags --tag-relative -L - -f"$dir/$$.tags" --languages=-php,javascript,sql
+  sort $dir/$$.tags $dir/$$.php.tags > $dir/tags
+else
+  git ls-files | \
+    ctags --tag-relative -L - -f"$dir/$$.tags" --languages=-javascript,sql
+    mv "$dir/$$.tags" "$dir/tags"
+fi
+

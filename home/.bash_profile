@@ -121,6 +121,10 @@ function git-wrapper {
         return $?
       fi
       ;;
+    ctags)
+      git_dir="$(git rev-parse --git-dir 2>/dev/null)"
+      $git_dir/hooks/ctags
+      ;;
     *) \git "$@";;
   esac
 }

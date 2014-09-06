@@ -34,3 +34,5 @@
   mnemonicprefix = true
 [log]
   decorate = full
+[init]
+	templatedir = ~/.git_template
