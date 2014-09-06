@@ -15,7 +15,7 @@
 	url = https://github.com/ervandew/supertab
 [submodule "home/.vim/bundle/vim-list-char-toggle"]
 	path = home/.vim/bundle/vim-list-char-toggle
-	url = git@github.com:wesclemens/vim-list-char-toggle.git
+	url = https://github.com/wesclemens/vim-list-char-toggle.git
 [submodule "home/.vim/bundle/vim-colors-solarized"]
 	path = home/.vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
