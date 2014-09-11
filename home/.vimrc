@@ -162,7 +162,9 @@ set listchars=tab:»\ ,trail:·,eol:¶,nbsp:·
 "set list
 
 " Disable <F1> as help button
-nmap <F1> <nop>
+map <F1> <nop>
+imap <F1> <nop>
+
 
 " ****
 " * Graphical VIM settings
