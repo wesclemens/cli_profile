@@ -125,7 +125,48 @@ function git-wrapper {
       git_dir="$(git rev-parse --git-dir 2>/dev/null)"
       $git_dir/hooks/ctags
       ;;
-    *) \git "$@";;
+    virtenv)
+      shift
+      if ! which virtualenv &>/dev/null; then
+        echo "Could not find virtualenv binary"
+        exit 1
+      fi
+      git_virtenv="$(git rev-parse --git-dir 2>/dev/null)/virtual-env"
+
+      case "$1" in
+        init)
+          if [[ -d "$git_virtenv" ]]; then
+            echo "Virtual environment already exists!!"
+            return 1
+          fi
+          virtualenv "$git_virtenv"
+        ;;
+        activate)
+          source "$git_virtenv/bin/activate"
+        ;;
+        deactivate)
+          deactivate
+        ;;
+        '')
+          echo "Subcommand required!!"
+          return 1
+        ;;
+        *)
+          cmd=$git_virtenv/bin/$1
+          if [[ -f "$cmd" ]]; then
+            shift
+            $cmd $@
+          else
+            echo "Comamnd '$1' not found!!"
+            echo "$git_virtenv/bin/$1"
+            return 1
+          fi
+        ;;
+      esac
+      ;;
+    *)
+      \git "$@"
+      ;;
   esac
 }
 alias git="git-wrapper"

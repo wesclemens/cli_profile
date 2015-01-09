@@ -23,6 +23,7 @@ fi
 # Add Android SDK CLI tools to path
 if [[ -d /opt/local/share/java/android-sdk-macosx ]]; then
   PATH=$PATH:/opt/local/share/java/android-sdk-macosx/tools:/opt/local/share/java/android-sdk-macosx/platform-tools
+  PATH=$PATH:/opt/local/share/java/android-sdk-macosx/tools:/opt/local/share/java/android-sdk-macosx/tools
 fi
 
 # Bash autocomplete files installed with port
@@ -33,4 +34,9 @@ fi
 # Bash git prompt from port
 if [[ -f /opt/local/share/git/git-prompt.sh ]]; then
   source /opt/local/share/git/git-prompt.sh
+fi
+
+# Include Python bin
+if [[ -d  $(python -c "import sys; print(sys.prefix)")/bin ]]; then
+  PATH=$(python -c "import sys; print(sys.prefix)")/bin:$PATH
 fi
