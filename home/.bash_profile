@@ -38,14 +38,22 @@ fi
 # set a fancy prompt (non-color, unless we know we "want" color)
 function __fancy_prompt {
   local _rc=$?; # Trap return code
-  local utf8_prompt=yes # Need to find a way to detect this
+  local utf8_prompt=no # Need to find a way to detect this
   local color_prompt=no
 
-  case "$TERM" in
-    xterm-color) color_prompt=yes;;
-    xterm-256color) color_prompt=yes;;
-    screen*) color_prompt=yes;;
-  esac
+  if [[ "$(locale charmap)" -eq "UTF-8" ]]; then
+    utf8_prompt=yes
+  fi
+
+  if [[ "$(tput colors)" > 2 ]]; then
+    color_prompt=yes
+  else
+    case "$TERM" in
+      xterm-color) color_prompt=yes;;
+      xterm-256color) color_prompt=yes;;
+      screen*) color_prompt=yes;;
+    esac
+  fi
 
   if [[ "$color_prompt" = yes ]]; then
     local c_clear='\[\e[0m\]'
