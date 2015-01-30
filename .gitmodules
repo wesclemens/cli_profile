@@ -1,15 +1,15 @@
 [submodule "home/.vim/bundle/nerdtree"]
 	path = home/.vim/bundle/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git
 [submodule "home/.vim/bundle/SearchComplete"]
 	path = home/.vim/bundle/SearchComplete
-	url = git://github.com/vim-scripts/SearchComplete.git
+	url = https://github.com/vim-scripts/SearchComplete.git
 [submodule "home/.vim/bundle/syntastic"]
 	path = home/.vim/bundle/syntastic
-	url = git://github.com/scrooloose/syntastic.git
+	url = https://github.com/scrooloose/syntastic.git
 [submodule "home/.vim/bundle/vim-coffee-script"]
 	path = home/.vim/bundle/vim-coffee-script
-	url = git://github.com/kchmck/vim-coffee-script.git
+	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "home/.vim/bundle/supertab"]
 	path = home/.vim/bundle/supertab
 	url = https://github.com/ervandew/supertab
@@ -18,7 +18,7 @@
 	url = https://github.com/wesclemens/vim-list-char-toggle.git
 [submodule "home/.vim/bundle/vim-colors-solarized"]
 	path = home/.vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "home/.vim/bundle/indentLine"]
 	path = home/.vim/bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine
@@ -39,7 +39,7 @@
 	url = https://github.com/vim-php/tagbar-phpctags.vim.git
 [submodule "home/.vim/bundle/vim-fugitive"]
 	path = home/.vim/bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "home/.vim/bundle/nerdcommenter"]
 	path = home/.vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
