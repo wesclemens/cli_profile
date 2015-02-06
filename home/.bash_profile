@@ -41,7 +41,7 @@ function __fancy_prompt {
   local utf8_prompt=no # Need to find a way to detect this
   local color_prompt=no
 
-  if [[ "$(locale charmap)" -eq "UTF-8" ]]; then
+  if [[ "$(locale charmap)" == "UTF-8" ]]; then
     utf8_prompt=yes
   fi
 
