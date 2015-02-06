@@ -1,23 +1,30 @@
 " ****
 " * Terminal Settings
 " ****
-"if &term =~ 'xterm-256color' || &term =~ 'screen-256color'
-"  set t_Co=256
-"  set t_Sf=[3%p1%dm
-"  set t_Sb=[4%p1%dm
-"else
-"  set t_Co=16
-"  set t_Sf=[3%p1%dm
-"  set t_Sb=[4%p1%dm
-"  set t_kb=^V<BS>  "this fixs the backspace key
-"  fixdel
-"endif
-"
-"if &term =~ 'screen' || &term =~ 'screen-256color'
-"  exe "set title titlestring=vim:%t"
-"  exe "set title t_ts=\<ESC>k t_fs=\<ESC>\\"
-"  exe "set ttymouse=xterm2"
-"endif
+if has("terminfo")
+  if !exists("t_Co")
+    if &term =~ '-256color'
+      set t_Co=256
+    else
+      set t_Co=16
+    endif
+  endif
+
+  if !exists("t_Sf")
+    set t_Sf=[3%p1%dm
+  endif
+  if !exists("t_Sb")
+    set t_Sb=[4%p1%dm
+  endif
+  "set t_kb=^V<BS>  "this fixs the backspace key
+  "fixdel
+endif
+
+if &term =~ 'screen'
+  exe "set title titlestring=vim:%t"
+  exe "set title t_ts=\<ESC>k t_fs=\<ESC>\\"
+  exe "set ttymouse=xterm2"
+endif
 
 " Vim does not hijack terminal background color
 autocmd VimLeave * :set term=vt100
@@ -33,7 +40,7 @@ set nocompatible
 nnoremap <space> za
 
 " highlight right edge of page
-set textwidth=80
+"set textwidth=80
 set colorcolumn=+1
 
 " only highlight if in current buffer
@@ -210,6 +217,16 @@ command Sudow w !sudo tee % > /dev/null
 " Set permissions correctly on file that contain Shebang
 au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | execute "silent !chmod u+x <afile>" | endif | endif
 
+" Fix exscape lag
+if ! has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
+
 " ****
 " * Plugins
 " ****
@@ -283,10 +300,6 @@ except ImportError:
 endpython
 endif
 
-" * vim-list-char-toggle
-" List Toggle command (show non-printable chars)
-map <F10> :call ToggleList()<CR>
-
 " powerline settings
 set noshowmode
 if has("gui_macvim")
@@ -294,17 +307,11 @@ if has("gui_macvim")
   set antialias
 endif
 
-" Fix exscape lag
-if ! has('gui_running')
-  set ttimeoutlen=10
-  augroup FastEscape
-    autocmd!
-    au InsertEnter * set timeoutlen=0
-    au InsertLeave * set timeoutlen=1000
-  augroup END
-endif
+" * vim-list-char-toggle
+" List Toggle command (show non-printable chars)
+map <F10> :call ToggleList()<CR>
 
-" tagbar
+" * tagbar
 nmap <F3> :TagbarToggle<CR>
 
 " ****
