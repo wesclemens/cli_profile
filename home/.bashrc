@@ -6,12 +6,9 @@ if [[ -d $HOME/bin/ ]]; then
   PATH=$HOME/bin:$PATH
 fi
 
-# Load OS bashrc settings
-if [[ -f ~/.bashrc_$(uname) ]]; then
-  source ~/.bashrc_$(uname)
-fi
+for f in $HOME/.bash_env.d/*.bash; do
+  if [[ -f $f ]]; then
+    source $f
+  fi
+done
 
-# Load local bashrc if exists
-if [[ -f ~/.bashrc_local ]]; then
-  source ~/.bashrc_local
-fi

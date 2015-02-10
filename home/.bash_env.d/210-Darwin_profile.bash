@@ -1,3 +1,8 @@
+# Only run if interactive and OS X
+if ! [[ $- =~ i && $(uname) == "Darwin" ]]; then
+  return
+fi
+
 # Make commands more colorful
 CLICOLOR=1; export CLICOLOR
 

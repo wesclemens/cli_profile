@@ -1,3 +1,8 @@
+# Only run if interactive
+if ! [[ $- =~ i && $(uname) == "Linux" ]]; then
+  return
+fi
+
 alias which='alias | which --tty-only --read-alias --show-dot --show-tilde'
 
 if [[ -x /usr/bin/dircolors ]]; then
@@ -18,6 +23,11 @@ alias screen='screen -U'
 # Set up Git prompt
 if [[ -f /usr/local/git/contrib/completion/git-prompt.sh ]]; then
   source /usr/local/git/contrib/completion/git-prompt.sh
+fi
+
+# Bash completion
+if [[ -f /etc/bash_completion ]] && ! shopt -oq posix; then
+    source /etc/bash_completion
 fi
 
 # Set up Git completion
