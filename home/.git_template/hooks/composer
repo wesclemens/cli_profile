@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Check if a composer.json file is present
+if [ -f composer.json ]; then
+    # Detect composer binary
+    if which composer >/dev/null; then
+        COMPOSER_CMD='composer'
+    elif which composer.phar >/dev/null; then
+        COMPOSER_CMD='composer.phar'
+    else
+        echo "Composer file found but composer not installed!" 1>&2
+        COMPOSER_CMD='MISSING'
+        return
+    fi
+    # Run composer if composer.json is updated
+    # Install or update depending on lock file
+    [ ! -f composer.lock ] && $COMPOSER_CMD install || $COMPOSER_CMD update
+fi
+
