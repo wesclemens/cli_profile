@@ -5,7 +5,6 @@ function cd-wrapper {
 
   if [[ -n "$VIRTUAL_ENV" && "$VIRTUAL_ENV_AUTO" == "True" ]]; then
     if [[ $(pwd) != $(dirname $VIRTUAL_ENV)* ]]; then
-      echo deactivate
       deactivate
     fi
   fi
@@ -15,7 +14,6 @@ function cd-wrapper {
     if git rev-parse &>/dev/null; then
       local env_dir=$(git rev-parse --show-toplevel)/.venv
       if [[ -f $env_dir/bin/activate ]]; then
-        echo activate
         VIRTUAL_ENV_AUTO="True"
         source $env_dir/bin/activate
       fi
