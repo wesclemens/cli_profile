@@ -1,7 +1,7 @@
 VIRTUAL_ENV_AUTO="False"
 function cd-wrapper {
   # Change Directory
-  builtin cd $@
+  builtin cd "$@"
 
   if [[ -n "$VIRTUAL_ENV" && "$VIRTUAL_ENV_AUTO" == "True" ]]; then
     if [[ $(pwd) != $(dirname $VIRTUAL_ENV)* ]]; then
@@ -23,4 +23,4 @@ function cd-wrapper {
 
 alias cd="cd-wrapper"
 
-cd-wrapper . 
+cd-wrapper .
