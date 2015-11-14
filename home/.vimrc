@@ -191,25 +191,7 @@ set guioptions-=r
 " ****
 
 " run #!
-function! CheckForShebang()
-  silent cd %:p:h
-  if (match( getline(1) , '^\#!') == 0)
-    !./%
-  elseif (&ft == 'php')
-    !php ./%
-  elseif (&ft == 'javascript')
-    !node ./%
-  elseif (&ft == 'python')
-    !python ./%
-  elseif (&ft == 'java')
-    silent !javac ./%
-    !java %:r
-  else
-    echo "Could not excute script."
-  end
-  silent cd -
-endfunction
-map <F5> :call CheckForShebang()<CR>
+map <F5> :call runscript#CheckForShebang()<CR>
 
 " sudo write
 command Sudow w !sudo tee % > /dev/null
