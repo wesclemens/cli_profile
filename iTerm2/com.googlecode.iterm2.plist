@@ -478,7 +478,7 @@
 	<key>HideScrollbar</key>
 	<true/>
 	<key>HideTab</key>
-	<false/>
+	<true/>
 	<key>HighlightTabLabels</key>
 	<true/>
 	<key>HotKeyBookmark</key>
@@ -507,6 +507,8 @@
 	<false/>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/.homesick/repos/cli_profile/iTerm2</string>
+	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{712, 470}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -531,11 +533,13 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>2033 195 924 485 1280 -134 1920 1080 </string>
+	<string>269 110 924 485 0 0 1280 777 </string>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>582 373 384 129 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1914 1053 0 0 1280 778 </string>
+	<string>0 4 1277 773 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>403 242 570 423 0 0 1280 778 </string>
+	<string>0 9 1277 768 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2017,6 +2021,10 @@
 			<string>/Users/daunting</string>
 		</dict>
 	</array>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>453952806.39994597</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>464837472.43630898</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2081,7 +2089,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-08-20T12:21:29Z</date>
+	<date>2015-09-19T18:54:40Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2117,7 +2125,7 @@
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
-	<string>Lucida Grande</string>
+	<string>.Helvetica Neue DeskInterface</string>
 	<key>WindowNumber</key>
 	<false/>
 	<key>WindowStyle</key>
@@ -2129,6 +2137,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140629</string>
+	<string>2.1.1</string>
 </dict>
 </plist>
