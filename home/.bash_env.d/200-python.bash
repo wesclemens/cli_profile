@@ -13,3 +13,9 @@ if [[ -f ~/.pythonrc ]]; then
   export PYTHONSTARTUP=~/.pythonrc
 fi
 
+# Add user site
+user_site=$(python -m site --user-site 2>/dev/null)
+if [[ $? == 0 && ! -d $user_site ]]; then
+  mkdir -p $user_site
+fi
+unset user_site
