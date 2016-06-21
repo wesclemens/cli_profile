@@ -3,9 +3,9 @@
 # Check if a composer.json file is present
 if [ -f composer.json ]; then
     # Detect composer binary
-    if which composer >/dev/null; then
+    if command -v composer >/dev/null; then
         COMPOSER_CMD='composer'
-    elif which composer.phar >/dev/null; then
+    elif command -v composer.phar >/dev/null; then
         COMPOSER_CMD='composer.phar'
     else
         echo "Composer file found but composer not installed!" 1>&2
