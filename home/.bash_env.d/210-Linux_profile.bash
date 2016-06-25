@@ -3,7 +3,7 @@ if ! [[ $- =~ i && $(uname) == "Linux" ]]; then
   return
 fi
 
-alias which='alias | which --tty-only --read-alias --show-dot --show-tilde'
+alias which='command -v'
 
 if [[ -x /usr/bin/dircolors ]]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
