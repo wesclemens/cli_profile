@@ -1,24 +1,11 @@
-# Only run if interactive
+# Only run if interactive and Linux
 if ! [[ $- =~ i && $(uname) == "Linux" ]]; then
   return
 fi
 
-alias which='command -v'
-
 if [[ -x "$(command -v dircolors)" ]]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-  alias ls='ls -h --color=auto'
-  #alias dir='dir --color=auto'
-  #alias vdir='vdir --color=auto'
 fi
-
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-alias less='less -R'
-alias du='du -h'
-alias screen='screen -U'
 
 # Set up Git prompt
 if [[ -f /usr/local/git/contrib/completion/git-prompt.sh ]]; then

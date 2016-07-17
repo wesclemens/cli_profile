@@ -6,15 +6,8 @@ fi
 # Make commands more colorful
 CLICOLOR=1; export CLICOLOR
 
+unalias ls
 alias ls='ls -h'
-
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-alias less='less -R'
-alias du='du -h'
-alias screen='screen -U'
 
 # Enable Mac Ports
 if [[ -d /opt/local/sbin ]]; then
