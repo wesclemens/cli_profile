@@ -4,7 +4,7 @@ if ! [[ $- =~ i ]]; then
 fi
 
 # If pip is installed load pip completion
-if which pip &>/dev/null; then
+if command -v pip >/dev/null; then
   eval "`pip completion --bash`"
 fi
 

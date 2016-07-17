@@ -5,7 +5,7 @@ fi
 
 alias which='command -v'
 
-if [[ -x /usr/bin/dircolors ]]; then
+if [[ -x "$(command -v dircolors)" ]]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls -h --color=auto'
   #alias dir='dir --color=auto'

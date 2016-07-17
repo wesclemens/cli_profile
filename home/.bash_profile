@@ -13,11 +13,11 @@ set -o vi
 shopt -s checkwinsize
 
 ## Set up editors and pagers:
-EDITOR=$(which vim); export EDITOR
+EDITOR=$(command -v vim); export EDITOR
 VISUAL=$EDITOR; export VISUAL
-if which less &>/dev/null; then
-  PAGER=$(which less); export PAGER
+if command -v less >/dev/null; then
+  PAGER=$(command -v less); export PAGER
 else
-  PAGER=$(which more); export PAGER
+  PAGER=$(command -v more); export PAGER
 fi
 
