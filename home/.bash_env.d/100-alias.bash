@@ -19,3 +19,5 @@ alias less='less -R'
 alias du='du -h'
 alias screen='screen -U'
 alias tmux='tmux -2'
+
+alias p="ps -fu $USER"
