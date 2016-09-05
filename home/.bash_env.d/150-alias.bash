@@ -1,4 +1,5 @@
 # System specific aliases should be found in 210-<kernal>.bash
+# Aliases must be loaded after environment variables
 
 # Only run if interactive
 if ! [[ $- =~ i && $(uname) == "Linux" ]]; then
