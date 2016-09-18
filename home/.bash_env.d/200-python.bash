@@ -4,8 +4,8 @@ if ! [[ $- =~ i ]]; then
 fi
 
 # If pip is installed load pip completion
-if command -v pip >/dev/null; then
-  eval "`pip completion --bash`"
+if python -m pip &>/dev/null; then
+  eval "`python -m pip completion --bash`"
 fi
 
 # Python Conf
