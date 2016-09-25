@@ -40,3 +40,5 @@
   default = simple
 [linter "php"]
   silent = true
+[commit]
+  gpgsign = true
