@@ -46,3 +46,6 @@
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "home/.config/nvim/bundle/vim-airline"]
+	path = home/.config/nvim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
