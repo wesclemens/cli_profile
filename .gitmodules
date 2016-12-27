@@ -52,3 +52,6 @@
 [submodule "home/.config/nvim/bundle/vim-airline-themes"]
 	path = home/.config/nvim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "home/.tmux/plugins/tpm"]
+	path = home/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
