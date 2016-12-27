@@ -3,6 +3,11 @@ if ! [[ $- =~ i ]]; then
   return
 fi
 
+# Source git completion
+if ! command -V __git_ps1 &> /dev/null; then
+  [ -r /usr/share/git/completion/git-prompt.sh ] && source /usr/share/git/completion/git-prompt.sh
+fi
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 function __fancy_prompt {
   local _rc=$?; # Trap return code
