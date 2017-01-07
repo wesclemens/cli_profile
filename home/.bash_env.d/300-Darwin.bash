@@ -6,7 +6,6 @@ fi
 # Make commands more colorful
 CLICOLOR=1; export CLICOLOR
 
-unalias ls
 alias ls='ls -h'
 
 # Enable Mac Ports
