@@ -3,9 +3,14 @@ if ! [[ $- =~ i && $(uname) == "Linux" ]]; then
   return
 fi
 
+# Set up dir colors
 if [[ -x "$(command -v dircolors)" ]]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
+
+alias ls='ls -h --color=auto'
+alias dir='dir -h --color=auto'
+alias vdir='vdir -h --color=auto'
 
 # Set up Git prompt
 if [[ -f /usr/local/git/contrib/completion/git-prompt.sh ]]; then
