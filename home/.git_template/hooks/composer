@@ -8,9 +8,9 @@ if [ -f composer.json ]; then
     elif command -v composer.phar >/dev/null; then
         COMPOSER_CMD='composer.phar'
     else
-        echo "Composer file found but composer not installed!" 1>&2
+        echo "WARN: Composer file found but composer not installed!" 1>&2
         COMPOSER_CMD='MISSING'
-        return
+        exit 0
     fi
     # Run composer if composer.json is updated
     # Install or update depending on lock file
