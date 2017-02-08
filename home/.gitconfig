@@ -2,9 +2,6 @@
   editor = vim
   excludesfile = ~/.gitignore_global
   pager = less
-[user]
-  name = William Clemens
-  email = wesclemens@gmail.com
 [advice]
   statusHints = false
 [branch]
