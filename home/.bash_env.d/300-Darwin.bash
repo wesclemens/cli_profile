@@ -26,8 +26,3 @@ fi
 if [[ -f /opt/local/etc/bash_completion ]]; then
   source /opt/local/etc/bash_completion
 fi
-
-# Bash git prompt from port
-if [[ -f /opt/local/share/git/git-prompt.sh ]]; then
-  source /opt/local/share/git/git-prompt.sh
-fi
