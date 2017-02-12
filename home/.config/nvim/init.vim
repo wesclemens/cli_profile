@@ -20,14 +20,6 @@ if has("terminfo")
   "fixdel
 endif
 
-if &term =~ 'screen'
-  exe "set title titlestring=vim:%t"
-  exe "set title t_ts=\<ESC>k t_fs=\<ESC>\\"
-  if exists(':ttymouse')
-    exe "set ttymouse=xterm2"
-  endif
-endif
-
 " Vim does not hijack terminal background color
 autocmd VimLeave * :set term=vt100
 
