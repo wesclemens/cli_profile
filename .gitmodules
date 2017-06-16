@@ -1,9 +1,6 @@
 [submodule "home/.vim/bundle/nerdtree"]
 	path = home/.config/nvim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "home/.vim/bundle/SearchComplete"]
-	path = home/.config/nvim/bundle/SearchComplete
-	url = https://github.com/vim-scripts/SearchComplete.git
 [submodule "home/.vim/bundle/syntastic"]
 	path = home/.config/nvim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
