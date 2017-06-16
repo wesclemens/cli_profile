@@ -9,8 +9,8 @@ if command -V pip &>/dev/null; then
 fi
 
 # Python Conf
-if [[ -f ~/.pythonrc ]]; then
-  export PYTHONSTARTUP=~/.pythonrc
+if [[ -f ~/.config/python/startup.py ]]; then
+  export PYTHONSTARTUP=~/.config/python/startup.py
 fi
 
 # Add user site
