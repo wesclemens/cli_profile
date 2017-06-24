@@ -24,7 +24,7 @@ endif
 autocmd VimLeave * :set term=vt100
 
 " ****
-" * User Interface 
+" * User Interface
 " ****
 
 " Do not emulate vi's limitations
@@ -43,7 +43,6 @@ augroup CursorLine
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
 augroup END
-
 
 " Keep 50 lines of command line history
 set history=50
