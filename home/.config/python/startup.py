@@ -21,8 +21,4 @@ if not hasattr(sys, '__interactivehook__'):
         atexit.register(readline.write_history_file, histfile)
         del os, histfile, rlcompleter, atexit
 
-# Make console output nicer
-import pprint
-sys.displayhook = pprint.pprint
-
 del sys
