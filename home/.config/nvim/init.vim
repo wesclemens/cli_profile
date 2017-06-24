@@ -182,6 +182,9 @@ if has('gui_running')
   " Remove right side scrollbar
   set guioptions-=r
 
+  " Remove left side scrollbar
+  set guioptions-=L
+
   " Set Font
   set guifont=Source\ Code\ Pro\ for\ Powerline\ 10
 endif
