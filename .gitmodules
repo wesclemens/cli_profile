@@ -1,53 +1,53 @@
 [submodule "home/.vim/bundle/nerdtree"]
-	path = home/.config/nvim/bundle/nerdtree
+	path = home/.vim/pack/plugins/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "home/.vim/bundle/syntastic"]
-	path = home/.config/nvim/bundle/syntastic
+	path = home/.vim/pack/plugins/start/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "home/.vim/bundle/vim-coffee-script"]
-	path = home/.config/nvim/bundle/vim-coffee-script
+	path = home/.vim/pack/plugins/start/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "home/.vim/bundle/supertab"]
-	path = home/.config/nvim/bundle/supertab
+	path = home/.vim/pack/plugins/start/supertab
 	url = https://github.com/ervandew/supertab
 [submodule "home/.vim/bundle/vim-list-char-toggle"]
-	path = home/.config/nvim/bundle/vim-list-char-toggle
+	path = home/.vim/pack/wesclemens/start/vim-list-char-toggle
 	url = https://github.com/wesclemens/vim-list-char-toggle.git
 [submodule "home/.vim/bundle/vim-colors-solarized"]
-	path = home/.config/nvim/bundle/vim-colors-solarized
+	path = home/.vim/pack/plugins/start/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "home/.vim/bundle/indentLine"]
-	path = home/.config/nvim/bundle/indentLine
+	path = home/.vim/pack/plugins/start/indentLine
 	url = https://github.com/Yggdroot/indentLine
 [submodule "powerline-fonts"]
 	path = powerline-fonts
 	url = https://github.com/Lokaltog/powerline-fonts.git
 [submodule "home/.vim/bundle/vim-openscad"]
-	path = home/.config/nvim/bundle/vim-openscad
+	path = home/.vim/pack/plugins/start/vim-openscad
 	url = https://github.com/torrancew/vim-openscad
 [submodule "home/.vim/bundle/vim-signify"]
-	path = home/.config/nvim/bundle/vim-signify
+	path = home/.vim/pack/plugins/start/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
 [submodule "home/.vim/bundle/tagbar"]
-	path = home/.config/nvim/bundle/tagbar
+	path = home/.vim/pack/plugins/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 [submodule "home/.vim/bundle/tagbar-phpctags"]
-	path = home/.config/nvim/bundle/tagbar-phpctags
+	path = home/.vim/pack/plugins/start/tagbar-phpctags
 	url = https://github.com/vim-php/tagbar-phpctags.vim.git
 [submodule "home/.vim/bundle/vim-fugitive"]
-	path = home/.config/nvim/bundle/vim-fugitive
+	path = home/.vim/pack/plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "home/.vim/bundle/nerdcommenter"]
-	path = home/.config/nvim/bundle/nerdcommenter
+	path = home/.vim/pack/plugins/start/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
 [submodule "home/.config/nvim/bundle/vim-airline"]
-	path = home/.config/nvim/bundle/vim-airline
+	path = home/.vim/pack/plugins/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
 [submodule "home/.config/nvim/bundle/vim-airline-themes"]
-	path = home/.config/nvim/bundle/vim-airline-themes
+	path = home/.vim/pack/plugins/start/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
 [submodule "home/.tmux/plugins/tpm"]
 	path = home/.tmux/plugins/tpm
