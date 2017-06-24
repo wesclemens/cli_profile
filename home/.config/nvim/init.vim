@@ -170,15 +170,19 @@ imap <F1> <nop>
 " ****
 " * Graphical VIM settings
 " ****
+if has('gui_running')
+  " Remove menu bar
+  set guioptions-=m
 
-" Remove menu bar
-set guioptions-=m
+  " Remove toolbar
+  set guioptions-=T
 
-" Remove toolbar
-set guioptions-=T
+  " Remove right side scrollbar
+  set guioptions-=r
 
-" Remove right side scrollbar
-set guioptions-=r
+  " Set Font
+  set guifont=Source\ Code\ Pro\ for\ Powerline\ 10
+endif
 
 " ****
 " * Add custom function
