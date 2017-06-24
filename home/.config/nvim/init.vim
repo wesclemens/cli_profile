@@ -116,6 +116,9 @@ if (version >= 700)
   set omnifunc=syntaxcomplete#Complete
 endif
 
+" Enabled Hidden Buffers
+set hidden
+
 " ****
 " * Text Formatting - General
 " ****
