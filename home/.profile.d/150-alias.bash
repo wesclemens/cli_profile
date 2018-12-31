@@ -18,6 +18,7 @@ alias egrep='egrep --color=auto'
 
 alias less='less -R'
 alias du='du -h'
+alias df='df -h'
 if command -v screen &>/dev/null; then
   alias screen='screen -U'
 fi
