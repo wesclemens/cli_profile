@@ -16,3 +16,8 @@ alias vdir='vdir -h --color=auto'
 if [[ -f /etc/bash_completion ]] && ! shopt -oq posix; then
     source /etc/bash_completion
 fi
+
+# Alias xdg-open to open match MacOS
+if env | grep "^XDG_" &>/dev/null; then
+  alias open="&>/dev/null xdg-open"
+fi
