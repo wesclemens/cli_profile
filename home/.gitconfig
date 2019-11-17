@@ -32,7 +32,7 @@
 [log]
   decorate = full
 [init]
-  templatedir = ~/.git_template
+  templatedir = ~/.homesick/repos/cli_profile/git_template
 [push]
   default = simple
 [linter "php"]
